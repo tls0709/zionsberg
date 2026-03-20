@@ -25,7 +25,7 @@ export default function Navigation() {
     { name: "Story", href: "/#story" },
     { name: "Stay", href: "/stay" },
     { name: "Program", href: "/program" },
-    { name: "Reservation", href: "/reservation" },
+    { name: "Journal", href: "/journal" },
   ];
 
   return (

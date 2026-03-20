@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숙박 안내 및 예약 | 시온스베르크</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              beige: '#fdfbf7',
+              wood: '#8B5A2B',
+              green: '#4c6a46',
+              warmgray: '#4a4a4a',
+              dark: '#2d2d2d'
+            }
+          },
+          fontFamily: {
+            sans: ['Noto Sans KR', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-brand-beige text-brand-warmgray antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 backdrop-blur-md bg-brand-beige/80 border-b border-brand-wood/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+          <i class="ph ph-tree text-3xl text-brand-green"></i>
+          <span class="font-bold text-2xl text-brand-dark tracking-tight">ZIONSBERG</span>
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-brand-warmgray font-medium hover:text-brand-green transition-colors">소개</a>
+          <a href="stay.html" class="text-brand-dark font-medium hover:text-brand-green transition-colors border-b-2 border-brand-green pb-1">숙박 예약</a>
+          <a href="program.html" class="text-brand-warmgray font-medium hover:text-brand-green transition-colors">프로그램 & 커뮤니티</a>
+          <a href="#booking-form" class="px-5 py-2.5 bg-brand-green text-white rounded-full hover:bg-opacity-90 transition-all shadow-sm font-medium">예약하기</a>
+        </div>
+        
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-green p-2 focus:outline-none">
+            <i class="ph ph-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-beige border-b border-brand-wood/10 absolute w-full shadow-lg">
+      <div class="px-6 pt-4 pb-6 space-y-4 flex flex-col">
+        <a href="index.html" class="text-brand-warmgray font-medium text-lg block">소개</a>
+        <a href="stay.html" class="text-brand-dark font-medium text-lg block">숙박 예약</a>
+        <a href="program.html" class="text-brand-warmgray font-medium text-lg block">프로그램 & 커뮤니티</a>
+        <a href="#booking-form" class="px-5 py-3 bg-brand-green text-white rounded-xl text-center font-medium mt-4">예약하기</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=2070&q=80" alt="편안한 객실" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 hero-overlay"></div>
+    
+    <div class="relative z-10 text-center px-6 mt-16">
+      <h1 class="gsap-reveal-up text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">편안한 쉼이 있는 머무름</h1>
+      <p class="gsap-reveal-up text-lg text-gray-200 font-light max-w-xl mx-auto drop-shadow-md">
+        시온스베르크의 정식 게스트하우스에서 자연의 숨결을 느끼며 깊은 휴식을 취해보세요.
+      </p>
+    </div>
+  </section>
+
+  <!-- Room Showcase -->
+  <section class="section-padding bg-white relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="gsap-reveal-up text-3xl font-bold text-brand-dark mb-4">우리의 공간들</h2>
+        <p class="gsap-reveal-up text-brand-warmgray text-lg">따뜻한 우드톤과 자연 채광이 가득한 객실을 소개합니다.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Room 1 -->
+        <div class="gsap-reveal-up bg-brand-beige rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-brand-wood/10 flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7def511?auto=format&fit=crop&w=800&q=80" alt="햇살 가득 통나무방" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-dark">최대 2인</div>
+          </div>
+          <div class="p-8 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-2xl font-bold text-brand-dark mb-3">햇살 가득 통나무방</h3>
+              <p class="text-brand-warmgray text-sm mb-6 leading-relaxed">아침 햇살이 넓은 창을 통해 스며드는 감성 가득한 2인용 객실입니다. 따뜻한 차 한 잔과 함께 하루를 시작하기 좋습니다.</p>
+              
+              <ul class="flex flex-wrap gap-2 mb-6">
+                <li class="bg-white px-3 py-1 rounded-full text-xs text-brand-warmgray border border-gray-200 flex items-center gap-1"><i class="ph ph-bed"></i> 퀸 사이즈 침대</li>
+                <li class="bg-white px-3 py-1 rounded-full text-xs text-brand-warmgray border border-gray-200 flex items-center gap-1"><i class="ph ph-wind"></i> 개별 난방/냉방</li>
+                <li class="bg-white px-3 py-1 rounded-full text-xs text-brand-warmgray border border-gray-200 flex items-center gap-1"><i class="ph ph-wifi-high"></i> 무료 Wi-Fi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 2 -->
+        <div class="gsap-reveal-up bg-brand-beige rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-brand-wood/10 flex flex-col" style="transition-delay: 100ms;">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1499916078039-922301b0eb9b?auto=format&fit=crop&w=800&q=80" alt="별빛 머무는 다락방" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-dark">최대 3인</div>
+          </div>
+          <div class="p-8 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-2xl font-bold text-brand-dark mb-3">별빛 머무는 다락방</h3>
+              <p class="text-brand-warmgray text-sm mb-6 leading-relaxed">천장의 작은 창문을 통해 밤하늘의 별을 볼 수 있는 다락방 구조입니다. 소규모 가족이나 친구들에게 추천합니다.</p>
+              
+              <ul class="flex flex-wrap gap-2 mb-6">
+                <li class="bg-white px-3 py-1 rounded-full text-xs text-brand-warmgray border border-gray-200 flex items-center gap-1"><i class="ph ph-bed"></i> 싱글 침대 3개</li>
+                <li class="bg-white px-3 py-1 rounded-full text-xs text-brand-warmgray border border-gray-200 flex items-center gap-1"><i class="ph ph-bathtub"></i> 전용 욕실</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 3 -->
+        <div class="gsap-reveal-up bg-brand-beige rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-brand-wood/10 flex flex-col" style="transition-delay: 200ms;">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="바람 소리 정원방" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-dark">최대 4인</div>
+          </div>
+          <div class="p-8 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="text-2xl font-bold text-brand-dark mb-3">바람 소리 정원방</h3>
+              <p class="text-brand-warmgray text-sm mb-6 leading-relaxed">정원과 바로 연결된 넓은 테라스가 있는 객실입니다. 산책로와 가까워 숲의 상쾌함을 가장 먼저 만끽할 수 있습니다.</p>
+              
+              <ul class="flex flex-wrap gap-2 mb-6">
+                <li class="bg-white px-3 py-1 rounded-full text-xs text-brand-warmgray border border-gray-200 flex items-center gap-1"><i class="ph ph-users"></i> 넓은 가족실</li>
+                <li class="bg-white px-3 py-1 rounded-full text-xs text-brand-warmgray border border-gray-200 flex items-center gap-1"><i class="ph ph-coffee"></i> 발코니 티테이블</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form Section -->
+  <section id="booking-form" class="section-padding bg-brand-wood/5 relative">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row gsap-reveal-up">
+        
+        <!-- Booking Info Side -->
+        <div class="bg-brand-green text-white p-10 md:w-2/5 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3"></div>
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-brand-wood/20 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+          
+          <div class="relative z-10">
+            <h3 class="text-3xl font-bold mb-4">머무름 예약하기</h3>
+            <p class="opacity-80 text-sm mb-8 leading-relaxed">
+              자연 속 편안한 공간을 준비하겠습니다. 원하시는 일정과 인원을 알려주시면, 빠르게 답변 드리겠습니다.
+            </p>
+            
+            <ul class="space-y-6">
+              <li class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center">
+                  <i class="ph ph-door text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm">체크인 / 체크아웃</h4>
+                  <p class="text-xs opacity-70">15:00 PM / 11:00 AM</p>
+                </div>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center">
+                  <i class="ph ph-headset text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm">예약 문의</h4>
+                  <p class="text-xs opacity-70">info@zionsberg.com</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Form Side -->
+        <div class="p-10 md:w-3/5 bg-white">
+          <form onsubmit="event.preventDefault(); alert('안내: 개발 테스트용입니다. 백엔드 연동 후 정상 접수됩니다.');" class="space-y-6">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="name" class="block text-sm font-bold text-brand-dark">성함 (Name)</label>
+                <input type="text" id="name" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green/50 focus:border-brand-green outline-none transition-all placeholder-gray-400 text-sm" placeholder="홍길동">
+              </div>
+              <div class="space-y-2">
+                <label for="email" class="block text-sm font-bold text-brand-dark">이메일 (Email)</label>
+                <input type="email" id="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green/50 focus:border-brand-green outline-none transition-all placeholder-gray-400 text-sm" placeholder="example@email.com">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="checkin" class="block text-sm font-bold text-brand-dark">체크인 (Check-in)</label>
+                <input type="date" id="checkin" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green/50 focus:border-brand-green outline-none transition-all text-sm text-brand-warmgray cursor-pointer">
+              </div>
+              <div class="space-y-2">
+                <label for="checkout" class="block text-sm font-bold text-brand-dark">체크아웃 (Check-out)</label>
+                <input type="date" id="checkout" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green/50 focus:border-brand-green outline-none transition-all text-sm text-brand-warmgray cursor-pointer">
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="guests" class="block text-sm font-bold text-brand-dark">인원 수 (Guests)</label>
+              <select id="guests" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green/50 focus:border-brand-green outline-none transition-all text-sm text-brand-warmgray cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%20%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%20fill%3D%22%239CA3AF%22%20%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1rem_center]">
+                <option value="1">1명</option>
+                <option value="2" selected>2명</option>
+                <option value="3">3명</option>
+                <option value="4">4명 (또는 그 이상)</option>
+              </select>
+            </div>
+
+            <div class="space-y-2">
+              <label for="message" class="block text-sm font-bold text-brand-dark">요청사항 (Requests)</label>
+              <textarea id="message" rows="3" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green/50 focus:border-brand-green outline-none transition-all placeholder-gray-400 text-sm resize-none" placeholder="알러지가 있거나, 추가 침구가 필요하신 경우 등 편하게 적어주세요."></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-brand-dark text-white rounded-xl font-bold text-sm hover:bg-black transition-colors shadow-md mt-4 flex items-center justify-center gap-2">
+              머무름 예약 접수하기 <i class="ph ph-paper-plane-right"></i>
+            </button>
+            <p class="text-xs text-center text-gray-400 mt-2">입력하신 정보는 예약 확인 목적으로만 안전하게 사용됩니다.</p>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice Section -->
+  <section class="py-16 bg-white border-t border-gray-100">
+    <div class="max-w-4xl mx-auto px-6 text-center gsap-reveal-up">
+      <i class="ph ph-info text-3xl text-brand-green mb-4"></i>
+      <h3 class="text-xl font-bold text-brand-dark mb-2">이용 안내</h3>
+      <p class="text-brand-warmgray text-sm leading-relaxed max-w-2xl mx-auto">
+        시온스베르크는 정식 숙박업으로 등록된 안전하고 청결한 공간입니다. 매일 철저한 침구 교체와 객실 정돈을 실시합니다.<br>
+        자연 속에서의 쉼을 존중하기 위해 늦은 밤에는 서로 조용히 배려해 주시기를 부탁드립니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white/70 py-16 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+        <div class="max-w-sm">
+          <div class="flex items-center gap-2 mb-6">
+            <i class="ph ph-tree text-2xl text-brand-green"></i>
+            <span class="font-bold text-xl text-white tracking-widest">ZIONSBERG</span>
+          </div>
+          <p class="mb-6 leading-relaxed text-sm">
+            브링업이 만들어가는 아름다운 힐링 공간.<br>
+            자연 속에서 쉼과 배움을 나누며 진정한 평화를 경험하세요.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 tracking-wider text-sm uppercase">Contact Us</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3"><i class="ph ph-map-pin text-brand-green text-lg flex-shrink-0"></i><span>Waldstraße 15, 79340 Zionsberg, Germany</span></li>
+            <li class="flex items-center gap-3"><i class="ph ph-phone text-brand-green text-lg flex-shrink-0"></i><span>+49 123 4567 890</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

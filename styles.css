@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* Base Styles */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #fdfbf7;
+  color: #4a4a4a;
+  overflow-x: hidden;
+}
+
+/* Custom Overlays */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(74, 74, 74, 0.4) 0%, rgba(45, 45, 45, 0.6) 100%);
+}
+
+.image-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+/* GSAP Initial States */
+.gsap-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Utility classes for layout */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Hide scrollbar for cleaner look if requested, but generally good to keep */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdfbf7; 
+}
+::-webkit-scrollbar-thumb {
+  background: #c3baab; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b7d6b; 
+}

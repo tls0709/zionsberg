@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시온스베르크 - 쉼과 배움이 있는 공간</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              beige: '#fdfbf7',
+              wood: '#8B5A2B',
+              green: '#4c6a46',
+              warmgray: '#4a4a4a',
+              dark: '#2d2d2d'
+            }
+          },
+          fontFamily: {
+            sans: ['Noto Sans KR', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Phosphor Icons for elegant UI icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-brand-beige text-brand-warmgray antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 backdrop-blur-md bg-brand-beige/80 border-b border-brand-wood/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+          <i class="ph ph-tree text-3xl text-brand-green"></i>
+          <span class="font-bold text-2xl text-brand-dark tracking-tight">ZIONSBERG</span>
+        </div>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-brand-dark font-medium hover:text-brand-green transition-colors">소개</a>
+          <a href="stay.html" class="text-brand-warmgray font-medium hover:text-brand-green transition-colors">숙박 예약</a>
+          <a href="program.html" class="text-brand-warmgray font-medium hover:text-brand-green transition-colors">프로그램 & 커뮤니티</a>
+          <a href="stay.html" class="px-5 py-2.5 bg-brand-green text-white rounded-full hover:bg-opacity-90 transition-all shadow-sm font-medium">예약하기</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-green p-2 focus:outline-none">
+            <i class="ph ph-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-beige border-b border-brand-wood/10 absolute w-full shadow-lg">
+      <div class="px-6 pt-4 pb-6 space-y-4 flex flex-col">
+        <a href="index.html" class="text-brand-dark font-medium text-lg block">소개</a>
+        <a href="stay.html" class="text-brand-warmgray font-medium text-lg block">숙박 예약</a>
+        <a href="program.html" class="text-brand-warmgray font-medium text-lg block">프로그램 & 커뮤니티</a>
+        <a href="stay.html" class="px-5 py-3 bg-brand-green text-white rounded-xl text-center font-medium mt-4">예약하기</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image placeholder (Warm German Forest) -->
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2070&q=80" alt="독일 숲의 따뜻한 햇살" class="absolute inset-0 w-full h-full object-cover">
+    
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0 hero-overlay"></div>
+    
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16">
+      <span class="gsap-reveal-up inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-sm text-white/90 text-sm font-medium mb-6 tracking-widest uppercase border border-white/30">Welcome to Zionsberg</span>
+      <h1 class="gsap-reveal-up text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+        쉼과 배움, 새로운 만남이<br>있는 곳, 시온스베르크
+      </h1>
+      <p class="gsap-reveal-up text-lg md:text-xl text-gray-200 mb-10 font-light max-w-2xl mx-auto drop-shadow-md">
+        독일의 아름다운 자연 속, 편안한 휴식과 따뜻한 사람들의 온기가 기다립니다.<br class="hidden md:block">
+        잠시 쉬어가세요. 그리고 함께 배워요.
+      </p>
+      <div class="gsap-reveal-up flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="stay.html" class="w-full sm:w-auto px-8 py-4 bg-brand-green text-white rounded-full hover:bg-[#3a5335] transition-all shadow-lg font-medium text-lg">
+          예약하기
+        </a>
+        <a href="program.html" class="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/50 rounded-full hover:bg-white/20 transition-all shadow-lg font-medium text-lg">
+          프로그램 보기
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 flex flex-col items-center animate-bounce">
+      <span class="text-sm font-light mb-2">Scroll Down</span>
+      <i class="ph ph-arrow-down text-xl"></i>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="section-padding bg-white relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="gsap-reveal-up text-3xl md:text-4xl font-bold text-brand-dark mb-4">우리를 채우는 특별한 식구들</h2>
+        <p class="gsap-reveal-up text-brand-warmgray max-w-2xl mx-auto text-lg">
+          종교나 배경에 상관없이, 이곳을 찾는 모든 분들을 진심으로 환대합니다.<br>
+          사람 냄새나는 따뜻한 시온스베르크의 가족을 소개합니다.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="gsap-reveal-up bg-brand-beige rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&w=800&q=80" alt="수녀님들" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-bold text-brand-dark mb-2">5명의 수녀님</h3>
+            <p class="text-brand-warmgray text-sm">항상 따뜻한 미소로 방문객의 마음을 편안하게 어루만져 주시는 든든한 버팀목입니다.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gsap-reveal-up bg-brand-beige rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+          <div class="h-64 overflow-hidden relative text-center flex items-center justify-center bg-gray-100">
+             <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="매니저와 선교사" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-bold text-brand-dark mb-2">선교사님 & 매니저님</h3>
+            <p class="text-brand-warmgray text-sm">시온스베르크의 모든 여정과 머무름이 불편함 없이 최고의 경험이 되도록 세심하게 돕습니다.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gsap-reveal-up bg-brand-beige rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+          <div class="h-64 overflow-hidden relative text-center flex items-center justify-center bg-gray-100">
+             <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="훈련생" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-bold text-brand-dark mb-2">2명의 훈련생</h3>
+            <p class="text-brand-warmgray text-sm">이곳에서 새로운 꿈을 키우며, 에너지 넘치게 공간에 생기를 더해주고 있습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pets Banner -->
+      <div class="gsap-reveal-up mt-12 bg-brand-wood/10 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row shadow-sm items-center justify-between gap-8">
+        <div class="max-w-xl">
+          <h3 class="text-2xl font-bold text-brand-dark mb-4 flex items-center gap-2">
+            <i class="ph ph-paw-print text-brand-wood"></i> 그리고 우리의 마스코트
+          </h3>
+          <p class="text-brand-warmgray text-lg">
+            시온스베르크에는 사람을 너무나 좋아하는 강아지와, 도도하지만 매력적인 고양이가 함께 살고 있습니다. 산책길에서 이 귀여운 친구들을 만나보세요.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" alt="강아지" class="w-32 h-32 rounded-full object-cover shadow-md border-4 border-white">
+          <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&q=80" alt="고양이" class="w-32 h-32 rounded-full object-cover shadow-md border-4 border-white translate-y-4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="section-padding bg-[#f4ebd9]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2 gsap-reveal-up">
+          <span class="text-brand-green font-bold tracking-wider text-sm mb-2 block">— BRINGUP'S NEW CHAPTER</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mb-6 leading-snug">모두에게 열린<br>새로운 힐링 공간</h2>
+          <p class="text-brand-warmgray text-lg mb-6 leading-relaxed">
+            기존의 다소 무거웠던 수녀원의 이미지를 벗고, '브링업'과 함께 새롭게 태어납니다. 지친 마음을 달래는 따뜻한 커피 한 잔, 새로운 영감을 주는 의미 있는 교육, 그리고 이웃과 나누는 풍성한 커뮤니티가 있습니다.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <i class="ph ph-book-open text-brand-green text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-dark text-lg">성장과 배움 (Education)</h4>
+                <p class="text-brand-warmgray">누구나 참여할 수 있는 다채로운 세미나와 프로그램</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <i class="ph ph-coffee text-brand-green text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-dark text-lg">휴식과 대화 (Cafe)</h4>
+                <p class="text-brand-warmgray">아름다운 풍경을 보며 향긋한 차를 나눌 수 있는 오픈 카페</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <i class="ph ph-heart text-brand-green text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-dark text-lg">나눔과 상생 (Sharing)</h4>
+                <p class="text-brand-warmgray">지역 어르신 식사 대접 등 이웃과 함께하는 따뜻한 커뮤니티 활동</p>
+              </div>
+            </li>
+          </ul>
+          <a href="program.html" class="inline-flex items-center gap-2 text-brand-green font-bold hover:text-brand-wood transition-colors group">
+            브링업의 비전 더 알아보기
+            <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+        
+        <div class="lg:w-1/2 w-full gsap-reveal-up">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="함께하는 사람들" class="w-full h-auto object-cover">
+            <div class="absolute inset-0 bg-brand-wood/20 mix-blend-multiply"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-brand-green relative overflow-hidden">
+    <!-- Abstract nature graphic placeholder -->
+    <div class="absolute top-0 right-0 opacity-10 pointer-events-none">
+      <svg width="600" height="600" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#ffffff" d="M44,-76.3C57.3,-68.8,68.4,-57,76.5,-43.3C84.6,-29.6,89.7,-14.8,88.7,-0.6C87.8,13.6,80.7,27.3,71.2,38.6C61.7,49.9,49.8,58.8,36.9,65.8C24,72.8,10,77.9,-3.8,84.5C-17.6,91,-31.2,98.9,-43.9,94.9C-56.5,90.9,-68.1,75.1,-76.7,59.3C-85.3,43.5,-90.9,27.7,-92.4,11.5C-93.9,-4.7,-91.3,-21.3,-83.4,-35.1C-75.5,-48.9,-62.3,-59.9,-48.5,-67.2C-34.7,-74.5,-20.3,-78.2,-5.3,-69C9.7,-59.8,25.4,-37.7,30.7,-83.8Z" transform="translate(100 100)" />
+      </svg>
+    </div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 gsap-reveal-up">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">지금, 시온스베르크로<br>초대합니다</h2>
+      <p class="text-brand-beige text-lg md:text-xl mb-10 opacity-90 font-light">
+        혼자만의 조용한 쉼표가 필요할 때, 누군가와 따뜻한 대화를 나누고 싶을 때.<br>
+        언제든 편안하게 머물다 가세요.
+      </p>
+      <a href="stay.html" class="inline-block px-10 py-5 bg-white text-brand-green rounded-full hover:bg-brand-beige transition-colors shadow-xl font-bold text-lg hover:-translate-y-1 transform">
+        숙박 예약하기
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white/70 py-16 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+        
+        <div class="max-w-sm">
+          <div class="flex items-center gap-2 mb-6">
+            <i class="ph ph-tree text-2xl text-brand-green"></i>
+            <span class="font-bold text-xl text-white tracking-widest">ZIONSBERG</span>
+          </div>
+          <p class="mb-6 leading-relaxed text-sm">
+            브링업이 만들어가는 아름다운 힐링 공간.<br>
+            자연 속에서 쉼과 배움을 나누며 진정한 평화를 경험하세요.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-green transition-colors text-white">
+              <i class="ph ph-instagram-logo text-xl"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-green transition-colors text-white">
+              <i class="ph ph-facebook-logo text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-6 tracking-wider text-sm uppercase">Contact Us</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <i class="ph ph-map-pin text-brand-green text-lg flex-shrink-0"></i>
+              <span>독일 시온스베르크 현지 주소 (가칭)<br>Waldstraße 15, 79340 Zionsberg, Germany</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="ph ph-phone text-brand-green text-lg flex-shrink-0"></i>
+              <span>+49 123 4567 890</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="ph ph-envelope text-brand-green text-lg flex-shrink-0"></i>
+              <span>info@zionsberg.com</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-bold mb-6 tracking-wider text-sm uppercase">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="hover:text-brand-green transition-colors">소개 (About)</a></li>
+            <li><a href="stay.html" class="hover:text-brand-green transition-colors">숙박 안내 및 예약</a></li>
+            <li><a href="program.html" class="hover:text-brand-green transition-colors">프로그램 & 커뮤니티</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-16 pt-8 border-t border-white/10 text-center text-xs opacity-60 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Zionsberg managed by Bringup. All rights reserved.</p>
+        <div class="space-x-4">
+          <a href="#" class="hover:text-white">이용약관</a>
+          <a href="#" class="hover:text-white">개인정보처리방침</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

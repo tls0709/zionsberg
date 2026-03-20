@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로그램 & 커뮤니티 | 시온스베르크</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              beige: '#fdfbf7',
+              wood: '#8B5A2B',
+              green: '#4c6a46',
+              warmgray: '#4a4a4a',
+              dark: '#2d2d2d'
+            }
+          },
+          fontFamily: {
+            sans: ['Noto Sans KR', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-brand-beige text-brand-warmgray antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 backdrop-blur-md bg-brand-beige/80 border-b border-brand-wood/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+          <i class="ph ph-tree text-3xl text-brand-green"></i>
+          <span class="font-bold text-2xl text-brand-dark tracking-tight">ZIONSBERG</span>
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-brand-warmgray font-medium hover:text-brand-green transition-colors">소개</a>
+          <a href="stay.html" class="text-brand-warmgray font-medium hover:text-brand-green transition-colors">숙박 예약</a>
+          <a href="program.html" class="text-brand-dark font-medium hover:text-brand-green transition-colors border-b-2 border-brand-green pb-1">프로그램 & 커뮤니티</a>
+          <a href="stay.html" class="px-5 py-2.5 bg-brand-green text-white rounded-full hover:bg-opacity-90 transition-all shadow-sm font-medium">예약하기</a>
+        </div>
+        
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-green p-2 focus:outline-none">
+            <i class="ph ph-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-beige border-b border-brand-wood/10 absolute w-full shadow-lg">
+      <div class="px-6 pt-4 pb-6 space-y-4 flex flex-col">
+        <a href="index.html" class="text-brand-warmgray font-medium text-lg block">소개</a>
+        <a href="stay.html" class="text-brand-warmgray font-medium text-lg block">숙박 예약</a>
+        <a href="program.html" class="text-brand-dark font-medium text-lg block">프로그램 & 커뮤니티</a>
+        <a href="stay.html" class="px-5 py-3 bg-brand-green text-white rounded-xl text-center font-medium mt-4">예약하기</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&w=2070&q=80" alt="함께 커피를 마시는 사람들" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 hero-overlay"></div>
+    
+    <div class="relative z-10 text-center px-6 mt-16 max-w-3xl mx-auto">
+      <h1 class="gsap-reveal-up text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">함께 나누고, 잠시 쉬어가는 곳</h1>
+      <p class="gsap-reveal-up text-lg text-gray-200 font-light drop-shadow-md">
+        시온스베르크는 아름다운 자연 속에서 배우고, 교류하며, 소중한 인연을 맺어가는 커뮤니티 공간입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education & Cafe -->
+  <section class="section-padding bg-white relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Education -->
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-24">
+        <div class="lg:w-1/2 w-full gsap-reveal-up">
+          <div class="relative rounded-[2rem] overflow-hidden shadow-xl aspect-square md:aspect-auto md:h-[500px]">
+            <img src="https://images.unsplash.com/photo-1576267423048-15c0040fec78?auto=format&fit=crop&w=1000&q=80" alt="세미나와 교육" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-brand-green/10 mix-blend-multiply"></div>
+          </div>
+        </div>
+        <div class="lg:w-1/2 gsap-reveal-up">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-wood/10 text-brand-wood text-sm font-bold mb-6">
+            <i class="ph ph-books"></i> Education
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">함께 배워요,<br>성장하는 커뮤니티</h2>
+          <p class="text-brand-warmgray text-lg mb-8 leading-relaxed">
+            시온스베르크의 세미나실은 누구나 자유롭게 지식을 나누고 배울 수 있는 열린 공간입니다. 정기적으로 개최되는 인문학 강좌, 영성 세미나, 그리고 건강한 라이프스타일을 위한 워크샵에 참여해 보세요.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3 border-b border-gray-100 pb-4">
+              <i class="ph ph-check-circle text-brand-green text-xl"></i>
+              <span class="text-brand-dark font-medium">자연 속에서 진행되는 힐링 워크샵</span>
+            </li>
+            <li class="flex items-center gap-3 border-b border-gray-100 pb-4">
+              <i class="ph ph-check-circle text-brand-green text-xl"></i>
+              <span class="text-brand-dark font-medium">다양한 주제의 인문, 철학, 예술 직무 세미나</span>
+            </li>
+            <li class="flex items-center gap-3 pb-4">
+              <i class="ph ph-check-circle text-brand-green text-xl"></i>
+              <span class="text-brand-dark font-medium">단체 및 소규모 모임을 위한 대관 서비스</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cafe -->
+      <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+        <div class="lg:w-1/2 gsap-reveal-up">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-wood/10 text-brand-wood text-sm font-bold mb-6">
+            <i class="ph ph-coffee"></i> Cafe Zionsberg
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">숲 속의 작은 카페,<br>이야기가 피어나는 곳</h2>
+          <p class="text-brand-warmgray text-lg mb-8 leading-relaxed">
+            질 좋은 원두로 내린 커피와 정성껏 구운 베이커리가 준비되어 있습니다. 창밖으로 펼쳐진 독일의 푸른 숲을 바라보며, 처음 만난 사람들과도 자연스럽게 인사를 나누고 따뜻한 미소를 교환하는 여유를 즐겨보세요.
+          </p>
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+            <h4 class="font-bold text-brand-dark mb-2">운영 시간</h4>
+            <p class="text-sm text-brand-warmgray">매일 OPEN 10:00 ~ CLOSE 18:00 (월요일 휴무)</p>
+          </div>
+        </div>
+        <div class="lg:w-1/2 w-full gsap-reveal-up shrink-0">
+          <div class="relative rounded-[2rem] overflow-hidden shadow-xl aspect-square md:aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" alt="카페 전경" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Community Story -->
+  <section class="section-padding bg-brand-green text-white relative overflow-hidden">
+    <!-- Abstract nature graphic -->
+    <div class="absolute top-0 left-0 opacity-10 pointer-events-none -translate-x-1/2 -translate-y-1/2">
+      <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#ffffff" d="M44,-76.3C57.3,-68.8,68.4,-57,76.5,-43.3C84.6,-29.6,89.7,-14.8,88.7,-0.6C87.8,13.6,80.7,27.3,71.2,38.6C61.7,49.9,49.8,58.8,36.9,65.8C24,72.8,10,77.9,-3.8,84.5C-17.6,91,-31.2,98.9,-43.9,94.9C-56.5,90.9,-68.1,75.1,-76.7,59.3C-85.3,43.5,-90.9,27.7,-92.4,11.5C-93.9,-4.7,-91.3,-21.3,-83.4,-35.1C-75.5,-48.9,-62.3,-59.9,-48.5,-67.2C-34.7,-74.5,-20.3,-78.2,-5.3,-69C9.7,-59.8,25.4,-37.7,30.7,-83.8Z" transform="translate(100 100)" />
+      </svg>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16 gsap-reveal-up">
+        <span class="uppercase tracking-widest text-brand-beige/70 text-sm font-bold block mb-4">Community</span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">마을과 나누는 넉넉한 인심</h2>
+        <p class="text-lg md:text-xl text-brand-beige/90 max-w-2xl mx-auto font-light">
+          브링업이 가장 소중하게 생각하는 가치는 '나눔'입니다. 우리끼리의 공간을 넘어, 지역 사회와 함께 호흡합니다.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 gsap-reveal-up flex flex-col md:flex-row items-center gap-10">
+        <div class="md:w-5/12 shrink-0">
+          <img src="https://images.unsplash.com/photo-1542458428-1ef972a9dfa1?auto=format&fit=crop&w=800&q=80" alt="어르신들과 식사" class="w-full rounded-2xl shadow-2xl object-cover aspect-square">
+        </div>
+        <div class="md:w-7/12">
+          <i class="ph-fill ph-quotes text-5xl text-brand-beige/30 mb-4 block"></i>
+          <h3 class="text-2xl font-bold mb-4">40분의 마을 어르신들을 모시고</h3>
+          <p class="text-brand-beige/90 leading-relaxed mb-6">
+            "시온스베르크에서는 한 달에 한 번, 지역의 어르신 40여 분을 초대하여 따뜻한 점심 식사를 대접합니다. 커다란 솥에 정성껏 끓인 스프와 갓 구운 빵 냄새가 온 공간을 채우고, 어르신들의 호탕한 웃음소리가 마당까지 퍼집니다. 이 소박하지만 정겨운 식사 자리는 단순한 봉사가 아니라, 세대를 넘어 친구가 되는 시온스베르크만의 축제입니다."
+          </p>
+          <p class="text-brand-beige/70 text-sm font-bold">— 브링업 커뮤니티 매니저</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapel -->
+  <section class="section-padding bg-brand-wood/5 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2 w-full gsap-reveal-up">
+           <!-- Warm, sunlit architecture instead of stark religious symbols -->
+           <div class="relative rounded-3xl overflow-hidden shadow-lg h-[600px]">
+            <img src="https://images.unsplash.com/photo-1519097489578-8314e396603a?auto=format&fit=crop&w=1000&q=80" alt="햇살이 들어오는 조용한 공간" class="w-full h-full object-cover">
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2 gsap-reveal-up">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-brand-dark shadow-sm text-sm font-bold mb-6">
+            <i class="ph ph-wind text-brand-green"></i> The Chapel
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mb-6 leading-tight">복잡한 일상을 내려놓고<br>잠시 쉬어가세요.</h2>
+          <p class="text-brand-warmgray text-lg mb-8 leading-relaxed">
+            시온스베르크의 작은 예배당은 특정 종교를 강요하지 않습니다. 나무의 결이 살아있는 아늑한 이 공간은, 오롯이 당신만을 위한 조용한 쉼표입니다. 복잡한 생각을 비우고 싶을 때, 무언가 감사의 마음이 차오를 때 언제든 들어와 눈을 감고 머물러 보세요.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 mt-10">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+              <i class="ph ph-leaf text-3xl text-brand-green mb-3"></i>
+              <h4 class="font-bold text-brand-dark mb-2">침묵과 명상</h4>
+              <p class="text-sm text-brand-warmgray">조용한 분위기 속에서 스스로의 마음을 들여다보는 시간</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+              <i class="ph ph-music-notes-simple text-3xl text-brand-green mb-3"></i>
+              <h4 class="font-bold text-brand-dark mb-2">아름다운 울림</h4>
+              <p class="text-sm text-brand-warmgray">가끔씩 들려오는 피아노 선율과 바람이 만들어내는 자연의 음악</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white/70 py-16 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+        
+        <div class="max-w-sm">
+          <div class="flex items-center gap-2 mb-6">
+            <i class="ph ph-tree text-2xl text-brand-green"></i>
+            <span class="font-bold text-xl text-white tracking-widest">ZIONSBERG</span>
+          </div>
+          <p class="mb-6 leading-relaxed text-sm">
+            브링업이 만들어가는 아름다운 힐링 공간.<br>
+            자연 속에서 쉼과 배움을 나누며 진정한 평화를 경험하세요.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-green transition-colors text-white">
+              <i class="ph ph-instagram-logo text-xl"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-green transition-colors text-white">
+              <i class="ph ph-facebook-logo text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-6 tracking-wider text-sm uppercase">Contact Us</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <i class="ph ph-map-pin text-brand-green text-lg flex-shrink-0"></i>
+              <span>독일 시온스베르크 현지 주소 (가칭)<br>Waldstraße 15, 79340 Zionsberg, Germany</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="ph ph-phone text-brand-green text-lg flex-shrink-0"></i>
+              <span>+49 123 4567 890</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="ph ph-envelope text-brand-green text-lg flex-shrink-0"></i>
+              <span>info@zionsberg.com</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-bold mb-6 tracking-wider text-sm uppercase">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="hover:text-brand-green transition-colors">소개 (About)</a></li>
+            <li><a href="stay.html" class="hover:text-brand-green transition-colors">숙박 안내 및 예약</a></li>
+            <li><a href="program.html" class="hover:text-brand-green transition-colors">프로그램 & 커뮤니티</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-16 pt-8 border-t border-white/10 text-center text-xs opacity-60 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Zionsberg managed by Bringup. All rights reserved.</p>
+        <div class="space-x-4">
+          <a href="#" class="hover:text-white">이용약관</a>
+          <a href="#" class="hover:text-white">개인정보처리방침</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

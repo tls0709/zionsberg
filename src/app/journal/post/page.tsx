@@ -39,10 +39,10 @@ export default function JournalPostPage() {
           <h2 className="text-3xl font-bold mt-12 mb-6">Embracing the Silence</h2>
           <p className="opacity-80 leading-relaxed mb-6">
             In our modern, hyper-connected world, true rest has become the ultimate luxury. 
-            At Zionsberg, we strip away the noise and cognitive overload to provide a space where you can simply "be".
+            At Zionsberg, we strip away the noise and cognitive overload to provide a space where you can simply &quot;be&quot;.
           </p>
           <p className="opacity-80 leading-relaxed mb-6">
-            Our latest winter edition introduces programs that align with the season's natural deceleration.
+            Our latest winter edition introduces programs that align with the season&apos;s natural deceleration.
             Join us to experience the transformative power of stillness.
           </p>
         </div>

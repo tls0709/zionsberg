@@ -4,12 +4,24 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useLanguageStore, Language } from "@/store/useLanguageStore";
+import { dict } from "@/locales";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const { lang, setLang } = useLanguageStore();
+  const t = dict[lang] || dict.ko; // fallback to ko
+
+  const links = [
+    { name: t.story, href: "/#story" },
+    { name: t.stay, href: "/stay" },
+    { name: t.program, href: "/program" },
+    { name: t.journal, href: "/journal" },
+  ];
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -20,13 +32,6 @@ export default function Navigation() {
     }
     setScrolled(latest > 50);
   });
-
-  const links = [
-    { name: "Story", href: "/#story" },
-    { name: "Stay", href: "/stay" },
-    { name: "Program", href: "/program" },
-    { name: "Journal", href: "/journal" },
-  ];
 
   return (
     <motion.nav
@@ -42,7 +47,7 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="text-2xl font-light tracking-widest uppercase">
-          Zionsberg
+          {t.navTitle}
         </Link>
 
         {/* Desktop Menu */}
@@ -56,11 +61,22 @@ export default function Navigation() {
               {link.name}
             </Link>
           ))}
+          <div className="border border-foreground/20 rounded-full px-3 py-1 flex items-center gap-2">
+            <select
+              value={lang}
+              onChange={(e) => setLang(e.target.value as Language)}
+              className="bg-transparent border-none text-xs font-bold tracking-widest uppercase cursor-pointer outline-none appearance-none"
+            >
+              <option value="ko" className="text-foreground bg-background">KR</option>
+              <option value="en" className="text-foreground bg-background">EN</option>
+              <option value="de" className="text-foreground bg-background">DE</option>
+            </select>
+          </div>
           <Link
             href="/reservation"
             className="px-6 py-2 bg-primary text-primary-foreground text-sm uppercase tracking-widest rounded-full hover:opacity-90 transition-opacity"
           >
-            Book Now
+            {t.bookNow}
           </Link>
         </div>
 

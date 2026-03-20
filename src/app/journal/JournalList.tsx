@@ -2,15 +2,20 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 interface Post {
   id: string;
   title: string;
   date: string;
   category: string;
+  language?: string;
 }
 
 export default function JournalList({ posts }: { posts: Post[] }) {
+  const { lang } = useLanguageStore();
+  const filteredPosts = posts.filter(post => post.language === lang || (!post.language && lang === 'ko'));
+
   return (
     <div className="min-h-screen pt-32 px-6 md:px-24 bg-background text-foreground flex flex-col items-center">
       <motion.div
@@ -31,12 +36,12 @@ export default function JournalList({ posts }: { posts: Post[] }) {
       </motion.div>
 
       <div className="w-full max-w-5xl flex flex-col border-t border-foreground/10 pb-32">
-        {posts.length === 0 ? (
+        {filteredPosts.length === 0 ? (
           <div className="py-24 text-center opacity-50 text-xl font-light tracking-tight">
-            No journal entries have been published yet.
+            No journal entries have been published yet for this language.
           </div>
         ) : (
-          posts.map((item, index) => (
+          filteredPosts.map((item, index) => (
             <Link href={`/journal/${item.id}`} key={item.id}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

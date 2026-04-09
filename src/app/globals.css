@@ -34,10 +34,25 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--background);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 4px;
+}
+
+#devtools-indicator {
+  display: none;
+}
+
+/* Hide Next.js Dev Indicator completely */
+#devtools-indicator,
+.nextjs-toast,
+nextjs-portal {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }

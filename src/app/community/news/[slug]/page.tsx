@@ -12,6 +12,7 @@ function urlFor(source: any) {
 }
 
 export const dynamicParams = false;
+export const runtime = "edge";
 
 export async function generateStaticParams() {
   const posts = await client.fetch(`*[_type == "notice" && defined(slug.current)] { "slug": slug.current }`);

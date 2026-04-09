@@ -14,7 +14,7 @@ function urlFor(source: any) {
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const posts = await client.fetch(`*[_type == "notice"] { "slug": slug.current }`);
+  const posts = await client.fetch(`*[_type == "notice" && defined(slug.current)] { "slug": slug.current }`);
   if (!posts || posts.length === 0) {
     return [{ slug: "placeholder-news" }];
   }

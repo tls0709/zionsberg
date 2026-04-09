@@ -27,11 +27,7 @@ export default function VideoHero() {
           className="w-full h-full object-cover opacity-70"
         >
           <source
-            src="/video/main_vv.mp4"
-            type="video/mp4; codecs=av01.0.05M.08"
-          />
-          <source
-            src="/video/main_v.mp4"
+            src="https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4"
             type="video/mp4"
           />
         </video>

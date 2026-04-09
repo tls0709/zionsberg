@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cloudflare
+/.open-next/
+/temp_build_clone/
+
+# large video files (exceed Cloudflare 25MB limit)
+/public/video/*.mp4
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

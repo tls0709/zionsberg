@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
   images: {
-    unoptimized: true, // REQUIRED for static export with next/image
+    unoptimized: true,
   },
   devIndicators: {
     appIsrStatus: false,

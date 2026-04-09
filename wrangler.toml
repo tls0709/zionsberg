@@ -9,3 +9,7 @@ command = "npx @opennextjs/cloudflare build"
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
+
+[vars]
+NEXT_PUBLIC_SANITY_PROJECT_ID = "t90obuqv"
+NEXT_PUBLIC_SANITY_DATASET = "production"

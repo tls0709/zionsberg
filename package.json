@@ -16,24 +16,29 @@
     "@sanity/image-url": "^2.0.3",
     "framer-motion": "^12.38.0",
     "gsap": "^3.14.2",
-    "lucide-react": "^0.475.0",
-    "next": "14.2.15",
+    "lucide-react": "^0.577.0",
+    "next": "16.2.0",
     "next-sanity": "^12.1.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "sanity": "^3.75.2",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sanity": "^5.17.1",
     "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.16",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.0",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.81.0"
+  },
+  "overrides": {
+    "@cloudflare/next-on-pages": {
+      "next": "$next"
+    }
   }
 }

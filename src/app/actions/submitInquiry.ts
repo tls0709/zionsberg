@@ -1,7 +1,5 @@
 "use server";
 
-export const runtime = 'edge';
-
 import { createClient } from 'next-sanity';
 
 // Create a copy of the client with a token for write access

@@ -13,7 +13,6 @@ function urlFor(source: any) {
 
 // Ensure Cloudflare next build works perfectly for all posts
 export const dynamicParams = false;
-export const runtime = "edge";
 
 export async function generateStaticParams() {
   const posts = await client.fetch(`*[_type == "post" && defined(slug.current)] { "slug": slug.current }`);

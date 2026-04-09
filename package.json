@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "npx @opennextjs/cloudflare"
+    "pages:build": "npx @opennextjs/cloudflare build"
   },
   "dependencies": {
     "@portabletext/react": "^6.0.3",

@@ -1,5 +1,6 @@
 import { Studio } from "./Studio";
 
+export const runtime = "edge";
 export const dynamic = "force-static";
 export const dynamicParams = false;
 

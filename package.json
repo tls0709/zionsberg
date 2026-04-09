@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "npx @opennextjs/cloudflare build && cp .open-next/worker.js .open-next/assets/_worker.js"
+    "deploy": "npx @opennextjs/cloudflare build && npx wrangler deploy"
   },
   "dependencies": {
     "@portabletext/react": "^6.0.3",

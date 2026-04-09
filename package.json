@@ -8,7 +8,7 @@
     "pages:build": "npx @opennextjs/cloudflare build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "npx @opennextjs/cloudflare build && cp .open-next/worker.js .open-next/assets/_worker.js && npx wrangler pages deploy .open-next/assets --project-name zionsberg"
+    "deploy": "npx @opennextjs/cloudflare build && cp .open-next/worker.js .open-next/assets/_worker.js && cp -r .open-next/cloudflare .open-next/middleware .open-next/server-functions .open-next/.build .open-next/assets/ && npx wrangler pages deploy .open-next/assets --project-name zionsberg"
   },
   "dependencies": {
     "@portabletext/react": "^6.0.3",

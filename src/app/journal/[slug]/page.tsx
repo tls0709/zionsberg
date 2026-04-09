@@ -17,7 +17,7 @@ export const dynamicParams = false;
 export async function generateStaticParams() {
   const posts = await client.fetch(`*[_type == "post" && defined(slug.current)] { "slug": slug.current }`);
   if (!posts || posts.length === 0) {
-    return [{ slug: "placeholder-post" }];
+    return [];
   }
   return posts.map((post: { slug: string }) => ({
     slug: post.slug,
